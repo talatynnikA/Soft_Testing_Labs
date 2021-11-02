@@ -5,7 +5,7 @@ const experimentalPlane = require('./Planes/experimentalPlane');
 
 class Airport {
 
-     getPasPl() {
+     getPassengerPlanes() {
         let pl = this.planes;
         var x = [];
         for (let p of this.planes) {
@@ -17,18 +17,17 @@ class Airport {
     getMilitaryPlanes() {
         let militaryPlanes = [];
         this.planes.forEach(plane => {
-            if (plane instanceof MilitaryPlane) {//if
+            if (plane instanceof MilitaryPlane) {
                 militaryPlanes.push(plane);
             }
-            //else
+            
             else{}
         });
-//return
         return militaryPlanes;
     }
 
     getPassengerPlaneWithMaxPassengersCapacity() {
-        let passengerPlanes = this.getPasPl();
+        let passengerPlanes = this.getPassengerPlanes();
         let planeWithMaxCapacity = passengerPlanes[0];
         for (let i = 0; i < passengerPlanes.length; i++) {
             if (passengerPlanes[i].getPassengersCapacity() >     planeWithMaxCapacity.getPassengersCapacity()) {
@@ -76,11 +75,10 @@ class Airport {
     getExperimentalPlanes() {
         let experimentalPlanes  = [];
         this.planes.forEach(plane => {
-            if (plane instanceof experimentalPlane) {//if
+            if (plane instanceof experimentalPlane) {
                 experimentalPlanes.push(plane);
             }
         });
-//return
         return experimentalPlanes;
     }
 
@@ -108,9 +106,6 @@ class Airport {
     getPlanes() {
         return this.planes;
     }
-
-
-
 
     static print(planes) {
         return JSON.stringify(planes);
