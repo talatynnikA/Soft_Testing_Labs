@@ -81,7 +81,6 @@ describe('My Test', () => {
             }
         }
 
-        // if not failed;
     })
 
     it('should check that experimentsl planes has classification level higher than unclassified', () => {
