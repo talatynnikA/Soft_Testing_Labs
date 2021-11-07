@@ -40,7 +40,7 @@ describe('My Test', () => {
     it('should check passenger plane with max capacity', () => {
         let airport = new Airport(planes);
         let expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
-        assert.isFalse( expectedPlaneWithMaxPassengersCapacity === planeWithMaxPassengerCapacity);
+        assert.isFalse( expectedPlaneWithMaxPassengersCapacity == planeWithMaxPassengerCapacity);
     });
 
 

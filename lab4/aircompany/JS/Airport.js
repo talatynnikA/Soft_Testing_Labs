@@ -7,9 +7,9 @@ class Airport {
 
      getPassengerPlanes() {
         let planes = this.planes;
-        var PassengerPlanes = [];
-        for (let p of planes) {
-            if (p instanceof PassengerPlane) {x.push(p);}
+         let PassengerPlanes = [];
+         for (let p of planes) {
+            if (p instanceof PassengerPlane) {PassengerPlanes.push(p);}
         }
         return PassengerPlanes;
     }
