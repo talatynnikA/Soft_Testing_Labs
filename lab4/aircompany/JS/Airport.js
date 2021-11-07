@@ -6,9 +6,9 @@ const experimentalPlane = require('./Planes/experimentalPlane');
 class Airport {
 
      getPassengerPlanes() {
-       // let pl = this.planes;  unused???
+        let planes = this.planes;
         var PassengerPlanes = [];
-        for (let p of this.planes) {
+        for (let p of planes) {
             if (p instanceof PassengerPlane) {x.push(p);}
         }
         return PassengerPlanes;
