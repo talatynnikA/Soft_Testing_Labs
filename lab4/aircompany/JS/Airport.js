@@ -79,7 +79,7 @@ class Airport {
 
 
     sortByMaxDistance() {
-        this.planes.sort((a, b) => (a.Get_Max_Flight_Distance() > b.Get_Max_Flight_Distance()) ? 1 : -1);
+        this.planes.sort((a, b) => (a.GetMaxFlightDistance() > b.GetMaxFlightDistance()) ? 1 : -1);
         return this;
     }
 
@@ -88,7 +88,7 @@ class Airport {
      * @return Airport
      */
     sortByMaxSpeed() {
-        return this.planes.sort((a, b) => (a.getMS() > b.getMS()) ? 1 : -1);
+        return this.planes.sort((a, b) => (a.getMaxSpeed() > b.getMaxSpeed()) ? 1 : -1);
     }
 
     sortByMaxLoadCapacity() {
