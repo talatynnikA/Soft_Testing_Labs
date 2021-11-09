@@ -1,9 +1,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-
-
-describe('test 10 minutes', function() {
+describe('search hk50 test', function() {
     this.timeout(30000)
     let driver
     let vars
@@ -12,18 +10,26 @@ describe('test 10 minutes', function() {
         vars = {}
     })
     afterEach(async function() {
-       // await driver.quit();
+        await driver.quit();
     })
-    it('test 10 minutes', async function() {
-        await driver.get("https://pastebin.com/")
-        await driver.manage().window().setRect(1084, 696)
-        await driver.executeScript("window.scrollTo(0,460.79998779296875)")
-        await driver.findElement(By.id("postform-text")).sendKeys("Hello from WebDriver")
-        await driver.findElement(By.id("select2-postform-expiration-container")).click()
-        await driver.findElement(By.id("postform-name")).click()
-        await driver.executeScript("window.scrollTo(0,777.5999755859375)")
-        await driver.findElement(By.id("postform-name")).sendKeys("helloweb")
-        await driver.findElement(By.css(".-big")).click()
-       // await driver.close()
+    it('search hk50 test', async function() {
+        await driver.get("https://my.liteforex.com/ru")
+        await driver.manage().window().setRect(1084, 697)
+        await driver.findElement(By.id("js_header_demo_login")).click()
+        //await driver.findElement(By.id("popup_login")).show()
+        //await driver.findElement(By.name("loginform-login")).click()
+        await driver.findElement(By.id("loginform-login")).sendKeys(" shkolar.neymeka@bk.ru")
+        //await driver.findElement(By.id("loginform-password")).click()
+        await driver.findElement(By.id("loginform-password")).sendKeys("V$#C8BZC6Nn*5jr")
+        await driver.findElement(By.css(".btn_large:nth-child(1)")).click()
+        await driver.findElement(By.name("search")).click()
+        await driver.findElement(By.name("search")).sendKeys("hk")
+        await driver.findElement(By.css(".item:nth-child(2) > .link")).click()
+        {
+            const element = await driver.findElement(By.linkText("Информация об инструменте"))
+            await driver.actions({ bridge: true }).moveToElement(element).perform()
+        }
+        await driver.findElement(By.css(".page")).click()
+        await driver.close()
     })
 })
